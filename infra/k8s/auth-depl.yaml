@@ -15,7 +15,12 @@ spec:
       containers:
         - name: auth
           image: sahadat20/auth
-
+          env: 
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_KEY
 
 ---
 
